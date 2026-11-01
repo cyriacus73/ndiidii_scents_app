@@ -345,17 +345,6 @@
 }
 .ob-size:hover { border-color: var(--ink); }
 .ob-size.is-active { border-color: var(--oxblood); box-shadow: 0 0 0 1px var(--oxblood); }
-.ob-size__dot {
-  width: 18px;
-  height: 18px;
-  flex: none;
-  border-radius: 999px;
-  border: 2px solid #c9c3b8;
-}
-.ob-size.is-active .ob-size__dot {
-  border-color: var(--oxblood);
-  background: radial-gradient(circle, var(--oxblood) 42%, #fff 50%);
-}
 .ob-size__label { font-size: 14px; font-weight: 600; color: var(--ink); }
 
 /* ---- collection accordions ---- */

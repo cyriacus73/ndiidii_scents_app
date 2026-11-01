@@ -202,7 +202,6 @@ export function OilBuilderShell({
                 className={`ob-size ${format === f.value ? 'is-active' : ''}`}
                 onClick={() => setFormat(f.value)}
               >
-                <span className="ob-size__dot" aria-hidden="true" />
                 <span className="ob-size__label">{f.label}</span>
               </button>
             ))}

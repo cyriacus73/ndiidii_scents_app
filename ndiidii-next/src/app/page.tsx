@@ -18,8 +18,8 @@ export default function HomePage() {
       <HowItWorks />
       <TierShowcase />
       {/* <GiftCardBanner />
-      {FEATURES.subscription && <SubscriptionClub />}
-      <FeaturedCollections /> */}
+      {FEATURES.subscription && <SubscriptionClub />} */}
+      <FeaturedCollections />
       <LogoCarousel />
     </>
   );

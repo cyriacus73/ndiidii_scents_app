@@ -11,6 +11,7 @@ import '@/styles/brands.css';
 import '@/styles/search.css';
 import '@/styles/discovery.css';
 import '@/styles/giftcards.css';
+import '@/styles/pages.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnnouncementBar from '@/components/AnnouncementBar';

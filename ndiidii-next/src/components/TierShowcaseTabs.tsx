@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { FEATURES, TIER_TABS } from '@/config/site';
 import { formatNaira } from '@/lib/format';
 import { BOX_SIZE, TIER_BOX_PRICE_NGN } from '@/lib/store.config';
-import { HeartIcon } from './Icons';
+import { ArrowRight, HeartIcon } from './Icons';
 import ProductImage from './ProductImage';
 import type { Perfume } from '@/lib/catalog';
 
@@ -65,6 +65,12 @@ export function TierShowcaseTabs({ byTier }: { byTier: Record<string, Perfume[]>
               </Link>
             </article>
           ))}
+        </div>
+
+        <div className="tiers__more">
+          <Link href={`/shop?tier=${tier}`} className="btn btn--ghost-dark btn--sm">
+            See more <ArrowRight width={12} height={12} />
+          </Link>
         </div>
       </div>
     </section>

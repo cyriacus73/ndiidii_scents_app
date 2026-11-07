@@ -466,10 +466,10 @@
   padding-block: 38px;
 }
 .how__step {
-  padding-right: 36px;
+  padding-inline: 36px;
+  text-align: center;
 }
 .how__step + .how__step {
-  padding-left: 36px;
   border-left: 1px solid #2c2c2c;
 }
 .how__n {
@@ -488,6 +488,7 @@
   font-size: 13px;
   line-height: 1.5;
   max-width: 330px;
+  margin-inline: auto;
 }
 
 /* ---------- Tier showcase ---------- */
@@ -578,6 +579,10 @@
 .tier-card a:hover .tier-card__name {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+.tiers__more {
+  margin-top: 28px;
+  text-align: center;
 }
 
 /* ---------- Gift card banner ---------- */

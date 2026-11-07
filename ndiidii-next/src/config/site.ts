@@ -63,7 +63,7 @@ export const SHOP = {
   collections: [
     { label: 'Curated Discovery Sets', to: '/discovery-sets' },
     { label: 'Perfume Oils', to: '/oils' },
-    { label: 'Occasion', to: '/shop?collection=occasion', hidden: true },
+    { label: 'Gender', to: '/shop', hidden: true },
     { label: 'Notes', to: '/shop?collection=notes', hidden: true },
   ],
 };
@@ -126,7 +126,7 @@ export const SUBSCRIPTION_PLANS = [
 export const COLLECTIONS = [
   { title: 'Curated Discovery Sets', text: 'A guided first step into the Ndiidii wardrobe.', to: '/discovery-sets', image: '/images/collection-discovery.jpg' },
   { title: 'Perfume Oils', text: 'Alcohol-free, skin-warm, and long-wearing.', to: '/oils', image: '/images/collection-oils.jpg' },
-  { title: 'Occasion', text: 'Daytime, evening, and everything worth a second spritz.', to: '/shop?collection=occasion', image: '/images/collection-occasion.jpg' },
+  { title: 'Gender', text: 'Masculine, feminine, and everything in between.', to: '/shop', image: '/images/collection-occasion.jpg' },
   { title: 'Notes', text: 'Explore by the notes you already love.', to: '/shop?collection=notes', image: '/images/collection-notes.jpg' },
 ];
 
@@ -162,7 +162,24 @@ export const FOOTER = {
         { label: 'All Scents', to: '/shop' },
         { label: 'Perfume Collection Builder', to: '/collection-builder' },
         { label: 'Oil Collection Builder', to: '/collection-builder/oils' },
+        { label: 'Discovery Sets', to: '/discovery-sets' },
         { label: 'Gift Cards', to: '/gift-cards' },
+      ],
+    },
+    {
+      title: 'Company',
+      links: [
+        { label: 'About', to: '/about' },
+        { label: 'Contact', to: '/contact' },
+        { label: 'FAQ', to: '/faq' },
+      ],
+    },
+    {
+      title: 'Support',
+      links: [
+        { label: 'Shipping & Delivery', to: '/shipping' },
+        { label: 'Terms & Conditions', to: '/terms' },
+        { label: 'Privacy Policy', to: '/privacy' },
       ],
     },
   ],

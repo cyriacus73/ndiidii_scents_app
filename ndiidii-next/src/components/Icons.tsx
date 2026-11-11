@@ -93,6 +93,17 @@ export const WhatsappIcon = (p: React.SVGProps<SVGSVGElement>) => (
     <path d="M9 9.5c.3 2 2.5 4.2 4.5 4.5l1.3-1.2-1.8-1-.8.6c-.8-.4-1.5-1.1-1.9-1.9l.6-.8-1-1.8L9 9.5Z" />
   </svg>
 );
+export const TiktokIcon = (p: React.SVGProps<SVGSVGElement>) => (
+  <svg {...base} width={15} height={15} {...p}>
+    <path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2 4 5 4.5" />
+  </svg>
+);
+export const YoutubeIcon = (p: React.SVGProps<SVGSVGElement>) => (
+  <svg {...base} width={16} height={16} {...p}>
+    <rect x="2.5" y="5.5" width="19" height="13" rx="4" />
+    <path d="M10 9.5l5 2.5-5 2.5Z" />
+  </svg>
+);
 
 // Scent-attribute icons for the discovery set slot cards.
 export const SeasonIcon = (p: React.SVGProps<SVGSVGElement>) => (

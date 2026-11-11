@@ -151,9 +151,9 @@ export const FOOTER = {
   blurb:
     'Middle Eastern perfume decants, curated by tier and built one collection at a time. Quiet luxury, poured exactly.',
   socials: [
-    { label: 'Instagram', href: 'https://instagram.com/', icon: 'instagram' },
-    { label: 'X', href: 'https://x.com/', icon: 'x' },
-    { label: 'WhatsApp', href: 'https://wa.me/', icon: 'whatsapp' },
+    { label: 'Instagram', href: 'https://instagram.com/Ndiidiiscents', icon: 'instagram' },
+    { label: 'TikTok', href: 'https://tiktok.com/@Ndiidiiscents', icon: 'tiktok' },
+    { label: 'YouTube', href: 'https://youtube.com/@Ndiidiiscents', icon: 'youtube' },
   ],
   columns: [
     {

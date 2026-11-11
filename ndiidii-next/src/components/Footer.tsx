@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { FOOTER } from '@/config/site';
-import { InstagramIcon, WhatsappIcon, XIcon } from './Icons';
+import { InstagramIcon, TiktokIcon, YoutubeIcon } from './Icons';
 import Year from './Year';
 import NewsletterForm from './NewsletterForm';
 
-const SOCIAL_ICONS = { instagram: InstagramIcon, x: XIcon, whatsapp: WhatsappIcon };
+const SOCIAL_ICONS = { instagram: InstagramIcon, tiktok: TiktokIcon, youtube: YoutubeIcon };
 
 export default function Footer() {
   return (

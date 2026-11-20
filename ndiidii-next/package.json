@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy:cpanel": "node scripts/deploy-cpanel.mjs"
   },
   "dependencies": {
     "cloudinary": "^2.11.0",

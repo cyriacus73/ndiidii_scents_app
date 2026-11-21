@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { formatNaira } from '@/lib/format';
-import { BOX_SIZE, OIL_FORMATS, OIL_TYPE_LABELS, oilSetPrice } from '@/lib/store.config';
+import { BOX_SIZE, OIL_FORMATS, OIL_TYPE_LABELS, SHOW_PRICES, oilSetPrice } from '@/lib/store.config';
 import { getOils } from '@/lib/catalog';
 import Monogram from '@/components/Monogram';
 
@@ -83,7 +83,7 @@ async function OilBody({ params }: { params: Promise<{ slug: string }> }) {
             at a time — Designer and Niche never mix.
           </p>
 
-          {type && (
+          {SHOW_PRICES && type && (
             <div className="pdp__oilprices">
               <p className="pdp__oilprices-title eyebrow">Price per set of {BOX_SIZE}</p>
               <ul>

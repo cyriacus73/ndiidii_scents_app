@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { formatNaira } from '@/lib/format';
-import { GIFT_CARD_AMOUNTS_NGN } from '@/lib/store.config';
+import { GIFT_CARD_AMOUNTS_NGN, SHOW_PRICES } from '@/lib/store.config';
 
 function GiftCardsInner() {
   const params = useSearchParams();
@@ -114,7 +114,7 @@ function GiftCardsInner() {
             <p className="serif gcard__label">Gift Card</p>
           </div>
           <div className="gcard__foot">
-            <span className="gcard__amount">{formatNaira(amount)}</span>
+            {SHOW_PRICES && <span className="gcard__amount">{formatNaira(amount)}</span>}
             <span className="gcard__validity">Valid 12 months</span>
           </div>
         </div>
@@ -138,18 +138,24 @@ function GiftCardsInner() {
 
           <div className="gform__group">
             <span className="gform__label">Choose an amount</span>
-            <div className="gform__amounts">
-              {GIFT_CARD_AMOUNTS_NGN.map((a) => (
-                <button
-                  type="button"
-                  key={a}
-                  className={`gform__amount ${amount === a ? 'is-active' : ''}`}
-                  onClick={() => setAmount(a)}
-                >
-                  {formatNaira(a)}
-                </button>
-              ))}
-            </div>
+            {SHOW_PRICES ? (
+              <div className="gform__amounts">
+                {GIFT_CARD_AMOUNTS_NGN.map((a) => (
+                  <button
+                    type="button"
+                    key={a}
+                    className={`gform__amount ${amount === a ? 'is-active' : ''}`}
+                    onClick={() => setAmount(a)}
+                  >
+                    {formatNaira(a)}
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <p className="gform__label" style={{ fontSize: 13, color: 'var(--slate)' }}>
+                Amount selected at checkout.
+              </p>
+            )}
           </div>
 
           <div className="gform__group">

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from '@/lib/cart';
-import { BOX_SIZE, TIER_BOX_PRICE_NGN, TIER_LABELS, type Tier } from '@/lib/store.config';
+import { BOX_SIZE, SHOW_PRICES, TIER_BOX_PRICE_NGN, TIER_LABELS, type Tier } from '@/lib/store.config';
 import { formatNaira } from '@/lib/format';
 import { BagIcon } from './Icons';
 
@@ -54,10 +54,12 @@ export default function PerfumeBuyPanel({
         {/* ---- Decant ---- */}
         <div className={`pdp__buy ${canBuildSet ? '' : 'is-disabled'}`}>
           <span className="pdp__buy-eyebrow eyebrow">Decant</span>
-          <span className="pdp__buy-price serif">
-            {decantPrice !== null ? formatNaira(decantPrice) : '—'}
-            <small>{decantPrice !== null ? ` · set of ${BOX_SIZE}` : ' not in a tier'}</small>
-          </span>
+          {SHOW_PRICES && (
+            <span className="pdp__buy-price serif">
+              {decantPrice !== null ? formatNaira(decantPrice) : '—'}
+              <small>{decantPrice !== null ? ` · set of ${BOX_SIZE}` : ' not in a tier'}</small>
+            </span>
+          )}
           {canBuildSet ? (
             <Link
               className="btn btn--ghost-light pdp__buy-cta"
@@ -73,9 +75,11 @@ export default function PerfumeBuyPanel({
         {/* ---- Full bottle ---- */}
         <div className={`pdp__buy ${canBuyBottle ? '' : 'is-disabled'}`}>
           <span className="pdp__buy-eyebrow eyebrow">Full bottle</span>
-          <span className="pdp__buy-price serif">
-            {canBuyBottle ? formatNaira(bottlePrice!) : '—'}
-          </span>
+          {SHOW_PRICES && (
+            <span className="pdp__buy-price serif">
+              {canBuyBottle ? formatNaira(bottlePrice!) : '—'}
+            </span>
+          )}
           {canBuyBottle ? (
             <>
               <label className="pdp__cart-panel-qty">

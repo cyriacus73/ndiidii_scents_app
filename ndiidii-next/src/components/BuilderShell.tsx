@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart';
-import { BOX_SIZE, TIER_BOX_PRICE_NGN, type Tier } from '@/lib/store.config';
+import { BOX_SIZE, SHOW_PRICES, TIER_BOX_PRICE_NGN, type Tier } from '@/lib/store.config';
 import { formatNaira } from '@/lib/format';
 import type { Perfume } from '@/lib/catalog';
 import ProductImage from './ProductImage';
@@ -149,7 +149,7 @@ export function BuilderShell({
               onClick={() => { setActiveTier(t.tier); setJustAdded(false); }}
             >
               <span className="tiercard__label eyebrow">{t.label}</span>
-              <span className="tiercard__price serif">{formatNaira(TIER_BOX_PRICE_NGN[t.tier])}</span>
+              {SHOW_PRICES && <span className="tiercard__price serif">{formatNaira(TIER_BOX_PRICE_NGN[t.tier])}</span>}
               <span className="tiercard__blurb">{t.blurb}</span>
               {Object.values(drafts[t.tier]).reduce((n, q) => n + q, 0) > 0 && (
                 <span className="tiercard__count">
@@ -265,10 +265,12 @@ export function BuilderShell({
               })}
             </div>
 
-            <div className="yourset__total">
-              <span>Total</span>
-              <strong className="serif">{formatNaira(price)}</strong>
-            </div>
+            {SHOW_PRICES && (
+              <div className="yourset__total">
+                <span>Total</span>
+                <strong className="serif">{formatNaira(price)}</strong>
+              </div>
+            )}
 
             <label className="yourset__qty">
               <span>Quantity</span>

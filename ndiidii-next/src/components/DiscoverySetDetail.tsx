@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart';
-import { DISCOVERY_SET_PRICE_NGN } from '@/lib/store.config';
+import { DISCOVERY_SET_PRICE_NGN, SHOW_PRICES } from '@/lib/store.config';
 import { formatNaira } from '@/lib/format';
 import ProductImage from './ProductImage';
 import Monogram from './Monogram';
@@ -155,10 +155,12 @@ export default function DiscoverySetDetail({ set, prev, next }: { set: CuratedSe
             <span>Select perfume</span>
             <span>4/4 Selected</span>
           </div>
-          <div className="dbox__total">
-            <span className="dbox__total-label">Total Price</span>
-            <span className="dbox__total-price">{formatNaira(DISCOVERY_SET_PRICE_NGN)}</span>
-          </div>
+          {SHOW_PRICES && (
+            <div className="dbox__total">
+              <span className="dbox__total-label">Total Price</span>
+              <span className="dbox__total-price">{formatNaira(DISCOVERY_SET_PRICE_NGN)}</span>
+            </div>
+          )}
           <label className="dbox__qty">
             <span>Quantity</span>
             <input type="number" min={1} max={99} value={qtyStr} onChange={(e) => setQtyStr(e.target.value)} />

@@ -8,6 +8,7 @@ import {
   BOX_SIZE,
   OIL_FORMATS,
   OIL_TYPE_LABELS,
+  SHOW_PRICES,
   oilSetPrice,
   type OilFormat,
 } from '@/lib/store.config';
@@ -343,10 +344,12 @@ export function OilBuilderShell({
               })}
             </div>
 
-            <div className="yourset__total">
-              <span>Total</span>
-              <strong className="serif">{formatNaira(price)}</strong>
-            </div>
+            {SHOW_PRICES && (
+              <div className="yourset__total">
+                <span>Total</span>
+                <strong className="serif">{formatNaira(price)}</strong>
+              </div>
+            )}
 
             <label className="yourset__qty">
               <span>Quantity</span>

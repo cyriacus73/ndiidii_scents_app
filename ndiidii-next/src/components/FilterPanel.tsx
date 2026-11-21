@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useId, useState } from 'react';
 import { SHOP } from '@/config/site';
 import { formatNaira } from '@/lib/format';
-import { TIER_BOX_PRICE_NGN, BOX_SIZE } from '@/lib/store.config';
+import { TIER_BOX_PRICE_NGN, BOX_SIZE, SHOW_PRICES } from '@/lib/store.config';
 import { toggle, type Filters } from '@/lib/shopQuery';
 import { ArrowRight, ChevronDown, ChevronLeft, CloseIcon, FilterIcon } from './Icons';
 import type { BrandCount } from '@/lib/catalog';
@@ -121,7 +121,7 @@ export default function FilterPanel({
         {['1', '2', '3'].map((t) => (
           <Check key={t} checked={filters.tier.includes(t)} onChange={() => set({ tier: toggle(filters.tier, t) })}>
             Tier {t}
-            {price(t) && (
+            {SHOW_PRICES && price(t) && (
               <>
                 {' — '}
                 {price(t)}

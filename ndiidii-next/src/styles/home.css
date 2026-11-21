@@ -833,7 +833,7 @@
 }
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.7fr 1fr 1fr 1fr 1.4fr;
+  grid-template-columns: 1.7fr 1fr 1fr 1fr;
   gap: 40px;
 }
 .footer__logo {
@@ -945,8 +945,7 @@
   .footer__grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .footer__brand,
-  .footer__grid > div:last-child {
+  .footer__brand {
     grid-column: 1 / -1;
   }
 }

@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { FOOTER } from '@/config/site';
 import { InstagramIcon, TiktokIcon, YoutubeIcon } from './Icons';
 import Year from './Year';
-import NewsletterForm from './NewsletterForm';
 
 const SOCIAL_ICONS = { instagram: InstagramIcon, tiktok: TiktokIcon, youtube: YoutubeIcon };
 
@@ -39,11 +38,6 @@ export default function Footer() {
           </nav>
         ))}
 
-        <div>
-          <h3 className="footer__title">Newsletter</h3>
-          <p className="footer__news-text">New pours, first.</p>
-          <NewsletterForm />
-        </div>
       </div>
 
       <div className="container">

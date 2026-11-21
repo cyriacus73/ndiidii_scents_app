@@ -89,3 +89,11 @@ export const DEFAULT_STOCK = Number(process.env.DEFAULT_STOCK ?? 0) || 0;
  * DEFAULT_STOCK (e.g. 0) for unknown-stock rows.
  */
 export const UNKNOWN_STOCK_IS_AVAILABLE = (process.env.UNKNOWN_STOCK_IS_AVAILABLE ?? 'true') !== 'false';
+
+/* ------------------------------------------------------------------ *
+ * Display
+ * ------------------------------------------------------------------ */
+
+// Hide all prices outside the cart/checkout (shop cards, product pages,
+// builders, discovery sets, gift cards). Flip to true to restore them.
+export const SHOW_PRICES = false;

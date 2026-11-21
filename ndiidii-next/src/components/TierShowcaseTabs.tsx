@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { FEATURES, TIER_TABS } from '@/config/site';
 import { formatNaira } from '@/lib/format';
-import { BOX_SIZE, TIER_BOX_PRICE_NGN } from '@/lib/store.config';
+import { BOX_SIZE, SHOW_PRICES, TIER_BOX_PRICE_NGN } from '@/lib/store.config';
 import { ArrowRight, HeartIcon } from './Icons';
 import ProductImage from './ProductImage';
 import type { Perfume } from '@/lib/catalog';
@@ -39,7 +39,7 @@ export function TierShowcaseTabs({ byTier }: { byTier: Record<string, Perfume[]>
               </button>
             ))}
           </div>
-          {boxPrice && (
+          {SHOW_PRICES && boxPrice && (
             <p className="tabs-row__price" aria-live="polite">
               Box of {BOX_SIZE} · <strong>{boxPrice}</strong>
             </p>

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ProductImage from '@/components/ProductImage';
 import { formatNaira } from '@/lib/format';
-import { BOX_SIZE, TIER_BOX_PRICE_NGN, TIER_LABELS } from '@/lib/store.config';
+import { BOX_SIZE, SHOW_PRICES, TIER_BOX_PRICE_NGN, TIER_LABELS } from '@/lib/store.config';
 import { getPerfume, getPerfumes } from '@/lib/catalog';
 import PerfumeBuyPanel from '@/components/PerfumeBuyPanel';
 
@@ -86,18 +86,20 @@ async function PerfumeBody({ params }: { params: Promise<{ slug: string }> }) {
 
           {/* Two sizes now, so the price block states both: a decant set is
               flat per tier, a full bottle comes from the sheet. */}
-          <div className="pdp__prices">
-            {decantPrice !== null && (
-              <p className="pdp__price serif">
-                {formatNaira(decantPrice)} <small>· decant set of {BOX_SIZE}</small>
-              </p>
-            )}
-            {p.bottlePrice !== null && (
-              <p className="pdp__price pdp__price--bottle serif">
-                {formatNaira(p.bottlePrice)} <small>· full bottle</small>
-              </p>
-            )}
-          </div>
+          {SHOW_PRICES && (
+            <div className="pdp__prices">
+              {decantPrice !== null && (
+                <p className="pdp__price serif">
+                  {formatNaira(decantPrice)} <small>· decant set of {BOX_SIZE}</small>
+                </p>
+              )}
+              {p.bottlePrice !== null && (
+                <p className="pdp__price pdp__price--bottle serif">
+                  {formatNaira(p.bottlePrice)} <small>· full bottle</small>
+                </p>
+              )}
+            </div>
+          )}
 
           {p.scentProfile && <p className="pdp__scent">{p.scentProfile}</p>}
           {p.inspiredBy && <p className="pdp__inspired">Inspired by {p.inspiredBy}</p>}

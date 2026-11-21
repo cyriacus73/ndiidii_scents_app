@@ -4,7 +4,7 @@ import { HeartIcon } from './Icons';
 import ProductImage from './ProductImage';
 import Monogram from './Monogram';
 import { formatNaira } from '@/lib/format';
-import { OIL_FORMATS, TIER_BOX_PRICE_NGN, oilSetPrice, type Tier } from '@/lib/store.config';
+import { OIL_FORMATS, SHOW_PRICES, TIER_BOX_PRICE_NGN, oilSetPrice, type Tier } from '@/lib/store.config';
 import type { OilCategory } from '@/lib/mappers';
 
 /**
@@ -64,21 +64,23 @@ export default function ShopCard({ p }: { p: CardProduct }) {
             the thing being browsed. The <h3> stays on the name for semantics. */}
         {p.brand && <p className="scard__brand">{p.brand}</p>}
         <h3 className="scard__name">{p.name}</h3>
-        <p className="scard__price">
-          {isOil ? (
-            from !== null ? (
-              <>Oil set · from {formatNaira(from)}</>
+        {SHOW_PRICES && (
+          <p className="scard__price">
+            {isOil ? (
+              from !== null ? (
+                <>Oil set · from {formatNaira(from)}</>
+              ) : (
+                <>Oil set</>
+              )
             ) : (
-              <>Oil set</>
-            )
-          ) : (
-            <>
-              {decantPrice !== null && <>Decant set {formatNaira(decantPrice)}</>}
-              {decantPrice !== null && bottlePrice !== null && <span className="scard__sep"> · </span>}
-              {bottlePrice !== null && <>Full Bottle {formatNaira(bottlePrice)}</>}
-            </>
-          )}
-        </p>
+              <>
+                {decantPrice !== null && <>Decant set {formatNaira(decantPrice)}</>}
+                {decantPrice !== null && bottlePrice !== null && <span className="scard__sep"> · </span>}
+                {bottlePrice !== null && <>Full Bottle {formatNaira(bottlePrice)}</>}
+              </>
+            )}
+          </p>
+        )}
         {soldOut && <p className="scard__status">Out of stock</p>}
       </Link>
     </article>

@@ -9,8 +9,8 @@
 // All true = identical to the mockup. Set to false to remove them from the site.
 export const FEATURES = {
   subscription: true, // nav link + "Never Run Out of Signature" section + footer link
-  wishlist: true, // hearts on product cards, header heart, footer link
-  account: true, // header account icon, footer "My Orders / Account" links
+  wishlist: false, // hearts on product cards, header heart, footer link
+  account: false, // header account icon, footer "My Orders / Account" links
   guide: true, // nav link + footer link
   affiliate: true, // footer link
   requestPerfume: true, // footer link
@@ -41,6 +41,7 @@ export const NAV = [
   { label: 'Perfume Collection Builder', to: '/collection-builder' },
   { label: 'Oil Collection Builder', to: '/collection-builder/oils' },
   { label: 'Discovery Sets', to: '/discovery-sets' },
+  { label: 'Gift Cards', to: '/gift-cards' },
 ];
 
 // Hero background lives at /public/images/hero.png (from the Home mockup).

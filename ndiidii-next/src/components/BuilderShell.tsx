@@ -72,7 +72,6 @@ export function BuilderShell({
   const totalPicked = slotList.length;
   const full = totalPicked === BOX_SIZE;
   const price = TIER_BOX_PRICE_NGN[activeTier];
-  const canPay = lines.filter((l) => l.kind === 'perfume').every((l) => l.items.length === BOX_SIZE);
 
   const inc = (slug: string) => {
     setJustAdded(false);
@@ -295,11 +294,9 @@ export function BuilderShell({
               <BagIcon width={16} height={16} />
               {full ? 'Add Set to Cart' : `Pick ${Math.max(0, BOX_SIZE - totalPicked)} More`}
             </button>
-            {justAdded && canPay && (
-              <button className="yourset__checkout link-red" onClick={() => router.push('/checkout')}>
-                Go to Checkout
-              </button>
-            )}
+            <button className="yourset__checkout link-red" onClick={() => router.push('/checkout')}>
+              Go to Checkout
+            </button>
           </div>
         </aside>
       </div>

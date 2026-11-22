@@ -63,7 +63,7 @@ export const SHOP = {
   brandsShown: 12, // brands listed in the filter before "View All Brands, A–Z"
   collections: [
     { label: 'Curated Discovery Sets', to: '/discovery-sets' },
-    { label: 'Perfume Oils', to: '/oils' },
+    { label: 'Perfume Oils', to: '/collection-builder/oils' },
     { label: 'Gender', to: '/shop', hidden: true },
     { label: 'Notes', to: '/shop?collection=notes', hidden: true },
   ],
@@ -126,7 +126,7 @@ export const SUBSCRIPTION_PLANS = [
 
 export const COLLECTIONS = [
   { title: 'Curated Discovery Sets', text: 'A guided first step into the Ndiidii wardrobe.', to: '/discovery-sets', image: '/images/collection-discovery.jpg' },
-  { title: 'Perfume Oils', text: 'Alcohol-free, skin-warm, and long-wearing.', to: '/oils', image: '/images/collection-oils.jpg' },
+  { title: 'Perfume Oils', text: 'Alcohol-free, skin-warm, and long-wearing.', to: '/collection-builder/oils', image: '/images/collection-oils.jpg' },
   { title: 'Gender', text: 'Masculine, feminine, and everything in between.', to: '/shop', image: '/images/collection-occasion.jpg' },
   { title: 'Notes', text: 'Explore by the notes you already love.', to: '/shop?collection=notes', image: '/images/collection-notes.jpg' },
 ];

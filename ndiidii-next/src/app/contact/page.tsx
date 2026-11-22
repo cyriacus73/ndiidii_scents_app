@@ -26,9 +26,9 @@ export default function ContactPage() {
           <span className="page-contact__label">YouTube</span>
           <span className="page-contact__value">@Ndiidiiscents</span>
         </a>
-        <a className="page-contact" href="mailto:hello@ndiidii.com">
+        <a className="page-contact" href="mailto:orders@ndiidiscents.com">
           <span className="page-contact__label">Email</span>
-          <span className="page-contact__value">hello@ndiidii.com</span>
+          <span className="page-contact__value">orders@ndiidiscents.com</span>
         </a>
       </div>
 

@@ -382,11 +382,9 @@ export function OilBuilderShell({
               {full ? 'Add Oil Set to Cart' : `Pick ${Math.max(0, BOX_SIZE - totalPicked)} More`}
             </button>
 
-            {justAdded && (
-              <button type="button" className="ob-cta-checkout" onClick={() => router.push('/checkout')}>
-                Continue to Checkout
-              </button>
-            )}
+            <button type="button" className="ob-cta-checkout" onClick={() => router.push('/checkout')}>
+              Go to Checkout
+            </button>
           </div>
         </aside>
       </div>

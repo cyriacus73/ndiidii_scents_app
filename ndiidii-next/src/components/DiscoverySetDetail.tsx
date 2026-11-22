@@ -168,11 +168,9 @@ export default function DiscoverySetDetail({ set, prev, next }: { set: CuratedSe
           <button className="dbox__cta" onClick={addToCart}>
             {added || inCart ? 'Added' : 'Add to Cart'}
           </button>
-          {(added || inCart) && (
-            <button className="dbox__checkout link-red" onClick={() => router.push('/checkout')}>
-              Go to Checkout
-            </button>
-          )}
+          <button className="dbox__checkout link-red" onClick={() => router.push('/checkout')}>
+            Go to Checkout
+          </button>
         </aside>
         </div>
       </div>

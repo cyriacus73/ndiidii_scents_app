@@ -207,7 +207,7 @@
   .builder__layout { grid-template-columns: 1fr; }
   .builder__tiers { grid-template-columns: 1fr; }
   .builder__grid { grid-template-columns: repeat(2, 1fr); }
-  .yourset { position: static; }
+  .yourset { position: static; order: -1; }
 }
 
 /* ---- sections (oil builder: size row, collection row) ---- */

@@ -102,7 +102,11 @@ async function PerfumeBody({ params }: { params: Promise<{ slug: string }> }) {
           )}
 
           {p.scentProfile && <p className="pdp__scent">{p.scentProfile}</p>}
-          {p.inspiredBy && <p className="pdp__inspired">Inspired by {p.inspiredBy}</p>}
+          {p.inspiredBy && (
+            <p className="pdp__inspired">
+              {/^\s*original\s*$/i.test(p.inspiredBy) ? 'An original product' : `Inspired by ${p.inspiredBy}`}
+            </p>
+          )}
           {p.description && <p className="pdp__desc">{p.description}</p>}
 
           {notes.length > 0 && (
